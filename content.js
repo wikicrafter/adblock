@@ -1,14 +1,20 @@
-// Remove video overlay ads
-function removeOverlayAds() {
-  const overlayAds = document.querySelectorAll(".ytp-ad-overlay-slot");
-  overlayAds.forEach(ad => {
-    ad.remove();
+function removeAds() {
+  const adSelectors = [
+    // Example ad selectors for common ad elements
+    ".ad-banner",
+    ".ad-container",
+    ".ad-wrapper"
+  ];
+
+  adSelectors.forEach(selector => {
+    const ads = document.querySelectorAll(selector);
+    ads.forEach(ad => {
+      ad.remove();
+    });
   });
 }
 
-// Mutation observer to remove video overlay ads dynamically
-const observer = new MutationObserver(removeOverlayAds);
+const observer = new MutationObserver(removeAds);
 observer.observe(document, { childList: true, subtree: true });
 
-// Run the function on initial page load
-removeOverlayAds();
+removeAds();
