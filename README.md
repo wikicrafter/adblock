@@ -1,4 +1,4 @@
-<p>Introducing <strong>AdBlocker </strong>, the ultimate ad-blocking solution that enhances your browsing experience by eliminating annoying online advertisements. Tired of intrusive pop-ups, flashy banners, and disruptive video ads? AdBlocker is here to revolutionize your web browsing by providing a seamless, distraction-free environment across all websites.</p>
+<p>Introducing <strong>Open-Source </strong><strong>AdBlocker </strong>, the ultimate ad-blocking solution that enhances your browsing experience by eliminating annoying online advertisements. Tired of intrusive pop-ups, flashy banners, and disruptive video ads? AdBlocker is here to revolutionize your web browsing by providing a seamless, distraction-free environment across all websites.</p>
 <p>With AdBlocker, you can reclaim control of your online experience. No more wasting time closing countless ads or being bombarded with irrelevant promotional content. Our powerful and intelligent ad-blocking technology ensures that advertisements are effectively blocked, allowing you to focus on what matters most: the content you love.</p>
 <h3>Key Features:</h3>
 <ol>
