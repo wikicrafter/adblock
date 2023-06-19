@@ -1,5 +1,5 @@
 function removeAds() {
- const adSelectors = [
+  const adSelectors = [
   // Example ad selectors for common ad elements
   ".ad-banner",
   ".ad-container",

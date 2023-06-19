@@ -4,7 +4,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       return { cancel: true };
     }
   },
-  { urls: ["<all_urls>"] },
+  { urls: ["<all_urls>", "https://www.youtube.com/"] },
   ['blocking']
 );
 
