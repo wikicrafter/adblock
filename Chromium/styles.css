@@ -1,0 +1,28 @@
+/* Robust Ad Hiding */
+.ad-banner,
+.ad-container,
+.ad-wrapper,
+.ad-popup,
+.ad-native,
+div[id^='google_ads_'],
+div[id^='div-gpt-ad'],
+.google-auto-placed,
+.adsbygoogle,
+/* YouTube Specific */
+ytd-ad-slot-renderer,
+ytd-promoted-sparkles-web-renderer,
+ytd-promoted-sparkles-text-search-renderer,
+ytd-display-ad-renderer,
+ytd-compact-promoted-video-renderer,
+ytd-video-masthead-ad-v3-renderer,
+ytd-promoted-video-renderer,
+.ytd-ad-slot-renderer {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  z-index: -9999 !important;
+}
