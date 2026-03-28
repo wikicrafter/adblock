@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdBlocker Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-section">
+        <div class="icon-placeholder">
+          <svg width="24" height="24" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M64 18L30 33V63C30 83.5 44.5 102.5 64 108C83.5 102.5 98 83.5 98 63V33L64 18Z" fill="url(#icon_grad_small)"/>
+            <path d="M48 45L80 77M80 45L48 77" stroke="white" stroke-width="8" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="icon_grad_small" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#818cf8" />
+                <stop offset="100%" style="stop-color:#c084fc" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h1>AdBlockX</h1>
+      </div>
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="power-toggle" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+
+    <div class="status-card" id="status-card">
+      <p id="status-text">Protection Active</p>
+    </div>
+
+    <div class="stealth-container">
+      <div class="stealth-info">
+        <span class="stealth-title">Stealth Mode</span>
+        <span class="stealth-sub">Bypass anti-adblock walls</span>
+      </div>
+      <label class="switch small">
+        <input type="checkbox" id="stealth-toggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <section class="stats">
+      <div class="stat-item">
+        <span class="label">Session</span>
+        <span class="value" id="stats-session">0</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="label">Total Blocked</span>
+        <span class="value" id="stats-total">0</span>
+      </div>
+    </section>
+
+    <section class="site-actions">
+      <button id="whitelist-site" class="action-btn secondary">Whitelist this site</button>
+      <button id="report-ad" class="action-btn tertiary">Report missing ad</button>
+    </section>
+
+    <footer>
+      <p>Version 1.1 &bull; Powered by ITFORSEC</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

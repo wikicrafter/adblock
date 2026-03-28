@@ -1,0 +1,26 @@
+# OS Junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE Folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Node / Development
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# AI/Agent local data
+.gemini/
+
+# Packaging (Optional - ignoring standard zips and CRX files so you don't accidentally commit local builds, but keeping .7z allowed since you use it for the main release)
+*.zip
+*.crx
+*.tar.gz
