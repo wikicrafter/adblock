@@ -97,8 +97,36 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 // ─── Remote Blocklist Syncing ─────────────────────────────────────────────────
-const REMOTE_BLOCKLIST_URL = 'https://raw.githubusercontent.com/wikicrafter/adblock/main/scripts/blocklist.json';
+// jsDelivr CDN: free, no traffic limits, global CDN — built for open source at scale
+const REMOTE_BLOCKLIST_URL = 'https://cdn.jsdelivr.net/gh/wikicrafter/adblock@main/scripts/blocklist.json';
 const SYNC_INTERVAL_HOURS = 24;
+
+// ─── Safety: domains that must NEVER be blocked ───────────────────────────────
+const DOMAIN_ALLOWLIST = new Set([
+  'google.com', 'googleapis.com', 'gstatic.com',
+  'youtube.com', 'ytimg.com',
+  'github.com', 'githubusercontent.com', 'jsdelivr.net',
+  'cloudflare.com', 'chrome.google.com',
+  'microsoft.com', 'windows.com',
+  'apple.com', 'icloud.com',
+  'amazon.com', 'amazonaws.com',
+  'mozilla.org', 'firefox.com'
+]);
+
+// ─── Strict domain format validator ──────────────────────────────────────────
+// Accepts: "sub.domain.com", "domain.co.uk" — rejects IPs, wildcards, paths
+const DOMAIN_REGEX = /^(?:[a-z0-9](?:[a-z0-9\-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$/i;
+
+function isValidDomain(domain) {
+  if (typeof domain !== 'string') return false;
+  if (domain.length > 253) return false;                  // RFC max length
+  if (!DOMAIN_REGEX.test(domain)) return false;           // must be valid format
+  if (DOMAIN_ALLOWLIST.has(domain)) return false;         // never block safe domains
+  // Check no segment is blacklisted safety domain
+  const isSubOfAllowlisted = [...DOMAIN_ALLOWLIST].some(safe => domain.endsWith('.' + safe));
+  if (isSubOfAllowlisted) return false;
+  return true;
+}
 
 async function fetchRemoteBlocklist() {
   try {
@@ -113,11 +141,37 @@ async function fetchRemoteBlocklist() {
     }
 
     console.log('AdBlockX: Fetching remote blocklist...');
-    const res = await fetch(REMOTE_BLOCKLIST_URL);
+    const res = await fetch(REMOTE_BLOCKLIST_URL, { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const domains = await res.json(); // Expected format: ["example.com", "ads.site.com", ...]
-    if (!Array.isArray(domains) || domains.length === 0) return;
+    // ✅ Security: enforce content-type is JSON
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('json') && !contentType.includes('text')) {
+      throw new Error(`Unexpected content-type: ${contentType}`);
+    }
+
+    const raw = await res.json();
+
+    // ✅ Security: must be an array
+    if (!Array.isArray(raw)) throw new Error('Blocklist is not a JSON array');
+
+    // ✅ Security: cap size to prevent abuse (max 5000 entries)
+    if (raw.length > 5000) throw new Error(`Blocklist too large: ${raw.length} entries`);
+
+    // ✅ Security: validate every single domain strictly
+    const domains = raw.filter(d => {
+      if (!isValidDomain(d)) {
+        console.warn(`AdBlockX: Skipping invalid/unsafe domain: "${d}"`);
+        return false;
+      }
+      return true;
+    });
+
+    if (domains.length === 0) {
+      console.log('AdBlockX: No valid new domains in remote blocklist.');
+      chrome.storage.local.set({ lastRemoteSync: Date.now() });
+      return;
+    }
 
     // Get current dynamic rules to avoid inserting duplicates
     const existingRules = await chrome.declarativeNetRequest.getDynamicRules();
@@ -133,10 +187,10 @@ async function fetchRemoteBlocklist() {
         newRules.push({
           id: nextId,
           priority: 2,
-          action: { type: "block" },
+          action: { type: 'block' },
           condition: {
             urlFilter: filter,
-            resourceTypes: ["script", "image", "xmlhttprequest", "sub_frame", "ping", "media", "websocket", "other"]
+            resourceTypes: ['script', 'image', 'xmlhttprequest', 'sub_frame', 'ping', 'media', 'websocket', 'other']
           }
         });
       }
@@ -156,3 +210,4 @@ async function fetchRemoteBlocklist() {
     console.error('AdBlockX: Failed to fetch remote blocklist:', error.message);
   }
 }
+
