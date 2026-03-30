@@ -279,3 +279,33 @@ footer p {
 input:checked ~ .status-card {
   animation: pulse 2s infinite ease-in-out;
 }
+
+.custom-block-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.action-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0,0,0,0.2);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+}
+
+.action-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.action-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}

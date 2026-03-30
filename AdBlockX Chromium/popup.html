@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdBlocker Pro</title>
+  <title>AdBlockX</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="popup.css">
 </head>
@@ -63,6 +63,11 @@
     <section class="site-actions">
       <button id="whitelist-site" class="action-btn secondary">Whitelist this site</button>
       <button id="report-ad" class="action-btn tertiary">Report missing ad</button>
+      
+      <div class="custom-block-section">
+        <input type="text" id="custom-domain-input" placeholder="e.g. annoying-ads.com" class="action-input">
+        <button id="add-custom-domain" class="action-btn secondary">Block Domain</button>
+      </div>
     </section>
 
     <footer>

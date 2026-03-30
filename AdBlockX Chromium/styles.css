@@ -1,14 +1,38 @@
-/* Robust Ad Hiding */
-.ad-banner,
-.ad-container,
-.ad-wrapper,
-.ad-popup,
-.ad-native,
+/* ============================================================
+   AdBlockX - Cosmetic CSS Filters v1.2
+   Injected at document_start — hides ads before paint, zero JS.
+   ============================================================ */
+
+/* ─── Google / Programmatic Ads ────────────────────────────── */
+.adsbygoogle,
+ins.adsbygoogle,
+.google-auto-placed,
 div[id^='google_ads_'],
 div[id^='div-gpt-ad'],
-.google-auto-placed,
-.adsbygoogle,
-/* YouTube Specific */
+div[id^='gpt-ad-'],
+iframe[src*='doubleclick.net'],
+iframe[src*='googlesyndication.com'],
+iframe[src*='adservice.google'],
+iframe[id^='google_ads_iframe'],
+
+/* ─── Generic Ad Class/ID Patterns ─────────────────────────── */
+.ad-banner, .ad-container, .ad-wrapper, .ad-popup,
+.ad-native, .ad-slot, .ad-unit, .ad-zone, .ad-block,
+.ad-area, .ad-box, .ad-leaderboard, .ad-sidebar,
+.ad-overlay, .ad-interstitial, .ad-label, .ad-text,
+.ad-row, .ad-col, .ad-frame, .ad-strip, .ad-placeholder,
+.ads-wrapper, .ads-container, .ads-holder, .ads-box,
+.top-ads-container, .sidebar-ads, .banner-ads,
+#ad-container, #ad-wrapper, #ad-banner, #ads-container,
+#adBar, #adSlot, #adBox, #ad-slot, #ad-unit,
+[class*='--ad-'], [class*='_ad_'], [id*='_ad_'],
+
+/* ─── Data Attribute-Based Ad Markers ───────────────────────── */
+[data-ad], [data-ad-unit], [data-ad-slot],
+[data-ad-client], [data-adunit], [data-advertisement],
+[data-ad-id], [data-type="ad"], [data-module="ad"],
+
+/* ─── YouTube-Specific ──────────────────────────────────────── */
 ytd-ad-slot-renderer,
 ytd-promoted-sparkles-web-renderer,
 ytd-promoted-sparkles-text-search-renderer,
@@ -16,13 +40,85 @@ ytd-display-ad-renderer,
 ytd-compact-promoted-video-renderer,
 ytd-video-masthead-ad-v3-renderer,
 ytd-promoted-video-renderer,
-.ytd-ad-slot-renderer {
+ytd-banner-promoted-video-renderer,
+ytd-in-feed-ad-layout-renderer,
+ytd-statement-banner-renderer,
+.ytd-ad-slot-renderer,
+#masthead-ad,
+.ytp-ad-overlay-container,
+.ytp-ad-image-overlay,
+.ytp-ad-text-overlay,
+
+/* ─── Taboola & Outbrain (Content Recommendation Ads) ──────── */
+.taboola-widget,
+[id*='taboola'],
+[class*='taboola'],
+[id*='outbrain'],
+[class*='outbrain'],
+.OUTBRAIN,
+div[data-widget-id*='taboola'],
+
+/* ─── Criteo / Trade Desk / Quantcast ──────────────────────── */
+[id*='criteo'], [class*='criteo'],
+[id*='rcjsload'], [class*='rcjsload'],
+.qc-cmp-ui, .qc-cmp2-ui,
+
+/* ─── Native / Sponsored Content Labels ────────────────────── */
+[class*='sponsored-content'],
+[class*='native-ad'],
+[class*='promoted-content'],
+[id*='native-ad'],
+[aria-label='Sponsored'],
+
+/* ─── Pop-up / Interstitial Layers ─────────────────────────── */
+.popup-ad, .popunder, .overlay-ad, .fullscreen-ad,
+.interstitial-ad, .adhesion-ad, .sticky-ad,
+.floating-ad, .slide-up-ad, .modal-ad,
+
+/* ─── Tracking Pixels ───────────────────────────────────────── */
+img[src*='facebook.com/tr'],
+img[src*='/pixel/'],
+img[src*='pixel.'],
+img[width='1'][height='1'],
+img[width='0'][height='0'],
+img[style*='display:none'],
+
+/* ─── Cookie / GDPR Banners ─────────────────────────────────── */
+#onetrust-banner-sdk,
+#onetrust-consent-sdk,
+.onetrust-pc-dark-filter,
+#cookie-banner, .cookie-banner, .cookie-notice,
+.cookie-consent, #cookie-consent,
+.gdpr-banner, #gdpr-banner,
+.consent-banner, #consent-banner,
+.cc-window, .cc-banner, .cc-grower,
+.js-cookie-banner, .cookiealert,
+.cookies-eu-banner,
+[class*='cookie-bar'],
+[id*='cookie-notification'],
+[class*='consent-modal'],
+[class*='privacy-banner'],
+.fc-ab-root, .fc-dialog-container,
+#CybotCookiebotDialog,
+#sp-cc, #sp-cc-root,
+#cookie-law-info-bar,
+.pum-container,   /* Popup Maker plugin */
+.wp-gdpr-cookie-notice {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
   height: 0 !important;
   width: 0 !important;
+  max-height: 0 !important;
+  max-width: 0 !important;
   overflow: hidden !important;
   z-index: -9999 !important;
+}
+
+/* ─── Restore body scroll if cookie overlay removed ─────────── */
+body.onetrust-body-active,
+body.modal-open,
+body.overflow-hidden {
+  overflow: auto !important;
 }

@@ -112,4 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  // Handle Custom Domain Blocking
+  const addCustomDomainBtn = document.getElementById('add-custom-domain');
+  const customDomainInput = document.getElementById('custom-domain-input');
+  
+  if (addCustomDomainBtn && customDomainInput) {
+    addCustomDomainBtn.addEventListener('click', () => {
+      let domain = customDomainInput.value.trim();
+      if (domain) {
+        // basic cleanup
+        domain = domain.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+        chrome.runtime.sendMessage({ type: 'ADD_DYNAMIC_RULE', domain: domain });
+        customDomainInput.value = '';
+        customDomainInput.placeholder = 'Domain blocked!';
+        setTimeout(() => customDomainInput.placeholder = 'e.g. annoying-ads.com', 2000);
+      }
+    });
+  }
 });

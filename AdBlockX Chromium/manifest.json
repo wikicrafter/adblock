@@ -1,11 +1,13 @@
 {
   "manifest_version": 3,
   "name": "AdBlockX",
-  "version": "1.1",
-  "description": "Premium, high-performance ad blocker with real-time stats.",
+  "version": "1.2",
+  "description": "Premium, high-performance ad blocker with real-time stats, stealth mode, and dynamic blocking.",
   "permissions": [
     "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
     "storage",
+    "tabs",
     "webNavigation",
     "contextMenus"
   ],
