@@ -20,6 +20,9 @@ yarn-error.log
 # AI/Agent local data
 .gemini/
 
+#Website
+Website
+
 # Packaging (Optional - ignoring standard zips and CRX files so you don't accidentally commit local builds, but keeping .7z allowed since you use it for the main release)
 *.zip
 *.crx
