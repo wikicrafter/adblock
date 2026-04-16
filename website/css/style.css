@@ -1,0 +1,133 @@
+/* Custom Styles for AdBlockX Website */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #2d2d2d;
+    background-color: #f8f9fa;
+}
+
+.hero {
+    background: linear-gradient(135deg, #304ffe 0%, #4d5dff 40%, #6c4dff 100%);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    animation: fadeIn 1s ease-in;
+    color: #000;
+}
+
+.hero .display-4,
+.hero .lead,
+.hero p {
+    color: #000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.navbar-brand img {
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1);
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.btn {
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    min-height: 48px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+code {
+    background: #f8f9fa;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e9ecef;
+}
+
+.card-body {
+    min-height: 180px;
+}
+
+footer {
+    background: #343a40;
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 0;
+    }
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    .navbar .container {
+        padding-right: 0.6rem;
+        padding-left: 0.6rem;
+    }
+    .card {
+        margin-bottom: 1rem;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Stronger feature card style */
+.feature-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 12px 22px rgba(0,0,0,0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 28px rgba(0,0,0,0.15);
+}
+
+.feature-card h5 {
+    font-size: 1.2rem;
+    margin-top: 0.35rem;
+}
+
+.feature-card p {
+    color: #505050;
+    margin-bottom: 0;
+}
