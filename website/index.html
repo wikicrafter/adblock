@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdBlockX - Premium Ad Blocker for Chromium Browsers</title>
-    <meta name="description" content="AdBlockX is a high-performance, privacy-first ad blocker for Chrome, Edge, and Brave. Zero-latency blocking, auto-sync, and stealth mode.">
-    <meta name="keywords" content="ad blocker, chrome extension, privacy, adblock, manifest v3">
+    <title>AdBlockX v1.3 - Premium Ad Blocker for Chromium Browsers</title>
+    <meta name="description" content="AdBlockX v1.3: High-performance, privacy-first ad blocker for Chrome, Edge, and Brave. Visual element picker, HTTPS everywhere, stealth mode, and zero-latency blocking.">
+    <meta name="keywords" content="ad blocker, chrome extension, privacy, adblock, manifest v3, https everywhere, element picker">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#hero">
-                <img src="assets/images/icon128.png" alt="AdBlockX Logo" width="40" height="40" class="me-2">
+            <a class="navbar-brand d-flex align-items-center" href="#hero">
+                <img src="assets/images/icon128.png" alt="AdBlockX Logo" width="40" height="40" class="me-2 rounded">
                 AdBlockX
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -25,166 +25,185 @@
                     <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#download">Download</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section id="hero" class="hero bg-gradient text-white text-center py-5">
+    <section id="hero" class="hero text-white text-center py-5">
         <div class="container">
-            <img src="assets/images/icon128.png" alt="AdBlockX Icon" class="mb-4" width="128" height="128">
+            <img src="assets/images/icon128.png" alt="AdBlockX Icon" class="mb-4" width="140" height="140">
             <h1 class="display-4 fw-bold">AdBlockX</h1>
-            <p class="lead">Premium, High-Performance, Privacy-First Ad Blocker for Chromium Browsers</p>
-            <p class="small text-dark">Note: This version is intended for desktop Chromium browsers only and may not work on smartphone mobile browser versions.</p>
-            <p>Version 1.2 </p>
-            <a href="https://cdn.jsdelivr.net/gh/wikicrafter/adblock@main/AdBlockX%20v1.2%20Chromium.7z" class="btn btn-light btn-lg mt-3">Download Now</a>
+            <p class="lead fs-4 mb-3">Premium, High-Performance, Privacy-First Ad Blocker</p>
+            <p>Version 1.3 • Security & Feature Update</p>
+            <p class="text-dark mb-4">For Chromium Browsers: Chrome, Edge, Brave & more</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="#download" class="btn btn-light btn-lg px-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download me-2" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                    Download v1.3
+                </a>
+                <a href="https://github.com/wikicrafter/adblock" target="_blank" class="btn btn-outline-light btn-lg px-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github me-2" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="mt-4 small text-dark">
+                <span class="badge bg-success me-2">100% Free</span>
+                <span class="badge bg-info me-2">Open Source</span>
+                <span class="badge bg-warning text-dark me-2">Manifest V3</span>
+                <span class="badge bg-danger">Zero Telemetry</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white border-bottom">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3 col-6">
+                    <h3 class="fw-bold text-primary">70+</h3>
+                    <p class="mb-0 text-muted">Ad Networks Blocked</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h3 class="fw-bold text-primary">~15MB</h3>
+                    <p class="mb-0 text-muted">Memory Usage</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h3 class="fw-bold text-primary">30-50%</h3>
+                    <p class="mb-0 text-muted">Faster Page Loads</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h3 class="fw-bold text-primary">0%</h3>
+                    <p class="mb-0 text-muted">Telemetry</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="features" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Key Features</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Zero-Latency Network Blocking</h5>
-                            <p class="card-text">Blocks over 70+ major ad networks before they load, using native Chrome APIs.</p>
+            <h2 class="text-center mb-2">New in v1.3</h2>
+            <p class="text-center text-muted mb-5">Security fixes and exciting new features</p>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="card h-100 border-primary border-2">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="badge bg-primary me-2">NEW</span>
+                                <h5 class="card-title mb-0">Visual Element Picker</h5>
+                            </div>
+                            <p class="card-text">Click-to-select element blocking with hover preview. Similar to uBlock Origin's picker - hover over any element to see what will be blocked before confirming.</p>
+                            <ul class="list-unstyled mb-0">
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check text-success me-2" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>Red outline highlights elements</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check text-success me-2" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>Shows element info (tag, ID, class)</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check text-success me-2" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>Block per-page or globally</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Automatic Blocklist Sync</h5>
-                            <p class="card-text">Syncs with a remote blocklist every 24 hours for up-to-date protection.</p>
+                <div class="col-md-6">
+                    <div class="card h-100 border-success border-2">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="badge bg-success me-2">NEW</span>
+                                <h5 class="card-title mb-0">HTTPS Everywhere</h5>
+                            </div>
+                            <p class="card-text">Automatically upgrade HTTP connections to secure HTTPS. Browse more securely across the web.</p>
+                            <ul class="list-unstyled mb-0">
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check text-success me-2" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>Network-level HTTP upgrading</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check text-success me-2" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>Link rewriting on pages</li>
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check text-success me-2" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>Easy toggle in settings</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Custom Domain Blocking</h5>
-                            <p class="card-text">Manually add domains to block on the fly via the popup.</p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card h-100 border-warning border-2">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="badge bg-warning text-dark me-2">NEW</span>
+                                <h5 class="card-title mb-0">Settings Dashboard</h5>
+                            </div>
+                            <p class="card-text">Full-featured settings page with 7-day statistics chart, data saved, time saved calculations, and comprehensive feature toggles.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 border-danger border-2">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="badge bg-danger me-2">FIX</span>
+                                <h5 class="card-title mb-0">Security Enhancements</h5>
+                            </div>
+                            <p class="card-text">Critical XSS vulnerability fixed. Allowlist bypass bug fixed. Strict domain validation on all entry points.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-info border-2">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="badge bg-info me-2">ENH</span>
+                                <h5 class="card-title mb-0">Enhanced Privacy</h5>
+                            </div>
+                            <p class="card-text">Improved anti-fingerprinting module. Better block social widgets toggle. Enhanced overall privacy features.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-center mb-4">All Features</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Zero-Latency Blocking</h5>
+                            <p class="card-text">Native Chrome APIs block 70+ ad networks before they even load. No performance impact.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Cloud Blocklist Sync</h5>
+                            <p class="card-text">Monthly automatic sync with community blocklist. 5000+ rules always up-to-date.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
                             <h5 class="card-title">Stealth Mode</h5>
-                            <p class="card-text">Bypasses anti-adblock detectors and paywalls.</p>
+                            <p class="card-text">Bypasses anti-adblock walls and paywalls. Mocks detection libraries automatically.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
                             <h5 class="card-title">YouTube Ad Filtering</h5>
-                            <p class="card-text">Removes video ads, sponsored content, and fast-forwards through ads.</p>
+                            <p class="card-text">Removes video ads, skips unskippable ads at 16x speed, blocks sponsored content.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Privacy-First</h5>
-                            <p class="card-text">No data collection, no telemetry, absolute privacy.</p>
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Cookie Banner Auto-Dismiss</h5>
+                            <p class="card-text">Automatically hides GDPR/CCPA cookie notices. Clicks "Reject" by default.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faqHeading1">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                            What browsers does AdBlockX support?
-                        </button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            AdBlockX is designed for Chromium-based browsers: Google Chrome, Microsoft Edge, Brave, Opera and other Chromium forks supporting Manifest V3. Install via developer mode with unzipped extension files.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faqHeading2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                            How do automatic blocklist updates work?
-                        </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            The extension fetches `scripts/blocklist.json` from jsDelivr CDN once every 24 hours, validates content-type and domain format, and applies up to 5000 dynamic rules. Invalid entries, duplicates and allowlisted domains are ignored.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faqHeading3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                            Can I add custom domains or element rules?
-                        </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes. You can add domains via the popup in "custom domain blocking" or use right-click context menu to block page elements (site scope or global). Custom selectors are stored in local storage and reapplied automatically.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faqHeading4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                            Is my privacy protected?
-                        </button>
-                    </h2>
-                    <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes. AdBlockX does not collect browsing history, search queries, clicks, or telemetry. All data (settings, whitelist, stats) is stored locally. Remote sync is anonymous with no user identification.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faqHeading5">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
-                            How do I report issues or contribute?
-                        </button>
-                    </h2>
-                    <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Open an issue or PR in the GitHub repo. To contribute to the blocklist, edit `scripts/blocklist.json` using valid domain entries and submit via pull request.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faqHeading6">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
-                            How do I unzip the .7z file?
-                        </button>
-                    </h2>
-                    <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Download and install 7-Zip (Windows) or The Unarchiver (macOS). Right-click the downloaded `.7z` file, choose "7-Zip > Extract Here" (or equivalent), then load the extracted folder in Chrome/Edge via <code>chrome://extensions</code> Developer mode > Load unpacked.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faqHeading7">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
-                            How to load the extracted extension folder in browser?
-                        </button>
-                    </h2>
-                    <div id="faq7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Open the browser: Chrome, Edge, or Brave. Navigate to <code>chrome://extensions/</code> (or <code>edge://extensions/</code> for Edge). Enable "Developer mode", click "Load unpacked", and select the folder you extracted from the .7z file. The extension should then appear and be ready for use.
+                <div class="col-md-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Privacy-First Design</h5>
+                            <p class="card-text">Zero telemetry, zero tracking. All data stored locally. Open source MIT license.</p>
                         </div>
                     </div>
                 </div>
@@ -192,54 +211,401 @@
         </div>
     </section>
 
-    <section id="installation" class="py-5">
+    <section id="installation" class="py-5 bg-white">
         <div class="container">
             <h2 class="text-center mb-5">Installation Guide</h2>
-            <p class="text-muted">The download is `.7z` because it offers better compression than ZIP and keeps the package size small for fast delivery. Use 7-Zip (free) to extract on Windows, macOS, or Linux.</p>
             <div class="row">
-                <div class="col-md-6">
-                    <h4>Step 1: Download & Extract</h4>
-                    <p>Download the .7z file from the Download section. Extract it to a permanent folder.</p>
-                    <h4>Step 2: Install on Chrome/Edge/Brave</h4>
-                    <ol>
-                        <li>Open <code>chrome://extensions/</code> (or equivalent).</li>
-                        <li>Enable Developer mode.</li>
-                        <li>Click "Load unpacked" and select the extracted folder.</li>
-                        <li>If you don't have 7-Zip installed, download from <a href="https://www.7-zip.org/" target="_blank" rel="noreferrer">7-Zip</a>.</li>
-                        <li>Pin the AdBlockX shield to your toolbar.</li>
-                    </ol>
-                </div>
-                <div class="col-md-6">
-                    <div class="alert alert-info">
-                        <h5>Screenshot Coming Soon</h5>
-                        <p>Placeholder for installation steps screenshot.</p>
+                <div class="col-lg-8 mx-auto">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-3">Step 1: Download & Extract</h4>
+                            <p>Download the <code>.7z</code> file from the download section below. Use <a href="https://www.7-zip.org/" target="_blank">7-Zip</a> (Windows) or <a href="https://theunarchiver.com/" target="_blank">The Unarchiver</a> (Mac) to extract.</p>
+                            <div class="alert alert-info mb-0">
+                                <strong>Why .7z format?</strong> Better compression = smaller download = faster installation.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-3">Step 2: Enable Developer Mode</h4>
+                            <p>Open your browser and navigate to the extensions page:</p>
+                            <ul class="mb-0">
+                                <li><strong>Chrome:</strong> <code>chrome://extensions/</code></li>
+                                <li><strong>Edge:</strong> <code>edge://extensions/</code></li>
+                                <li><strong>Brave:</strong> <code>brave://extensions/</code></li>
+                            </ul>
+                            <p class="mb-0 mt-3">Toggle <strong>Developer mode</strong> ON (usually in top-right corner).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title mb-3">Step 3: Load Extension</h4>
+                            <ol class="mb-0">
+                                <li>Click <strong>"Load unpacked"</strong> button</li>
+                                <li>Select the extracted <code>AdBlockX Chromium</code> folder</li>
+                                <li>Extension will appear in your extensions list</li>
+                                <li><strong>Pin the extension</strong> to your toolbar for easy access</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="download" class="py-5 bg-primary text-white text-center">
+    <section id="faq" class="py-5 bg-light">
         <div class="container">
-            <h2>Download AdBlockX v1.2</h2>
-            <p>Compressed in .7z format for fast download. Requires 7-Zip to extract.</p>
-            <a href="https://cdn.jsdelivr.net/gh/wikicrafter/adblock@main/AdBlockX%20v1.2%20Chromium.7z" class="btn btn-light btn-lg">Download .7z File</a>
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What browsers does AdBlockX support?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    AdBlockX supports all Chromium-based browsers including Google Chrome, Microsoft Edge, Brave, Opera, and Vivaldi. It requires Manifest V3 support. Simply extract the .7z file and load it as an unpacked extension via Developer mode.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How do I use the new Visual Element Picker?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <ol class="mb-0">
+                                        <li>Click the AdBlockX shield icon in your toolbar</li>
+                                        <li>Click the purple <strong>"Element Picker"</strong> button</li>
+                                        <li>Hover over any element - it will be highlighted with a red outline</li>
+                                        <li>Click to select - a dialog shows the CSS selector</li>
+                                        <li>Choose <strong>"This page only"</strong> or <strong>"Everywhere"</strong></li>
+                                        <li>Click <strong>"Block Element"</strong> to confirm</li>
+                                    </ol>
+                                    <p class="mb-0 mt-2 text-muted">Press <strong>Esc</strong> at any time to cancel the picker.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What is HTTPS Everywhere and how does it work?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    HTTPS Everywhere automatically upgrades HTTP connections to secure HTTPS. It works on two levels:
+                                    <ul class="mb-2">
+                                        <li><strong>Network level:</strong> Upgrades page navigations from http:// to https://</li>
+                                        <li><strong>Content level:</strong> Rewrites links on pages you visit to use HTTPS</li>
+                                    </ul>
+                                    <p class="mb-0">Enable it in Settings → Advanced Privacy → HTTPS Everywhere toggle.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    How does automatic blocklist syncing work?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    AdBlockX fetches the community blocklist from GitHub via jsDelivr CDN once every 30 days. It validates:
+                                    <ul class="mb-2">
+                                        <li>Only valid DNS domain names are accepted</li>
+                                        <li>Protected domains (Google, GitHub, etc.) are excluded</li>
+                                        <li>Maximum 5,000 rules to prevent abuse</li>
+                                        <li>No duplicate rules are added</li>
+                                    </ul>
+                                    <p class="mb-0">The sync is completely anonymous with no user identification.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Can I add custom blocking rules?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! There are multiple ways:
+                                    <ul class="mb-2">
+                                        <li><strong>Popup:</strong> Type a domain in the input field and click "Block Domain"</li>
+                                        <li><strong>Element Picker:</strong> Click the Element Picker button and select any page element</li>
+                                        <li><strong>Right-click:</strong> Right-click any element and choose "Block element on this site" or "Block element everywhere"</li>
+                                    </ul>
+                                    <p class="mb-0">All custom rules are stored locally and persist across sessions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    How does Stealth Mode work?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Stealth Mode bypasses anti-adblock detection systems that some websites use. When enabled, AdBlockX:
+                                    <ul class="mb-2">
+                                        <li>Mocks anti-adblock libraries (blockAdBlock, FuckAdBlock, etc.)</li>
+                                        <li>Spofs bait element dimensions to appear "normal"</li>
+                                        <li>Bypasses Google Funding Choices and Admiral paywalls</li>
+                                        <li>Intercepts GDPR/CMP consent APIs</li>
+                                    </ul>
+                                    <p class="mb-0">Toggle it on in the popup (amber/gold switch). May occasionally break complex web apps.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    Is AdBlockX privacy-safe?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <strong>100% privacy-first design.</strong> AdBlockX does NOT collect:
+                                    <div class="row mt-2">
+                                        <div class="col-md-6">
+                                            <ul class="mb-0">
+                                                <li>❌ Browsing history</li>
+                                                <li>❌ Search queries</li>
+                                                <li>❌ Click data</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="mb-0">
+                                                <li>❌ Personal information</li>
+                                                <li>❌ Analytics/telemetry</li>
+                                                <li>❌ Crash reports</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0 mt-2">All settings, whitelist, and statistics are stored locally on your device.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                    What is the Settings Dashboard?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The Settings Dashboard (click gear icon in popup) provides:
+                                    <ul class="mb-2">
+                                        <li><strong>Protection Engine:</strong> Cloud sync status and manual sync button</li>
+                                        <li><strong>Advanced Privacy:</strong> Toggle HTTPS Everywhere, Block Social Widgets, Block Cookie Notices, Anti-Fingerprinting</li>
+                                        <li><strong>Whitelist:</strong> Manage domains where ads are allowed</li>
+                                        <li><strong>Blocked Sites Manager:</strong> View and search all blocking rules</li>
+                                        <li><strong>Analytics:</strong> 7-day blocking chart, data saved, time saved estimates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                    Does AdBlockX block YouTube ads?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! AdBlockX has specialized YouTube filtering that:
+                                    <ul class="mb-2">
+                                        <li>Removes pre-roll, mid-roll, and post-roll video ads</li>
+                                        <li>Skips unskippable ads by fast-forwarding at 16x speed</li>
+                                        <li>Hides sponsored video recommendations</li>
+                                        <li>Removes masthead banner ads and sidebar promotions</li>
+                                        <li>Auto-clicks "Skip Ad" buttons</li>
+                                    </ul>
+                                    <p class="mb-0">Refresh YouTube page if ads still appear (YouTube's SPA navigation may skip initial blocking).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                    How do I report an issue or contribute?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <strong>Report an ad that slipped through:</strong> Click "Report missing ad" in the popup - this opens a GitHub issue with pre-filled information.
+                                    <hr>
+                                    <strong>Contribute to the blocklist:</strong>
+                                    <ol class="mb-0">
+                                        <li>Fork the repository</li>
+                                        <li>Edit <code>scripts/blocklist.json</code></li>
+                                        <li>Add domain in the correct format</li>
+                                        <li>Submit a pull request</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                    Why does AdBlockX need the permissions it requests?
+                                </button>
+                            </h2>
+                            <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    All permissions are essential for ad blocking:
+                                    <ul class="mb-2">
+                                        <li><code>declarativeNetRequest</code> - Block ad network requests at the network level</li>
+                                        <li><code>storage</code> - Save your settings and statistics locally</li>
+                                        <li><code>tabs</code> - Detect current tab for whitelist functionality</li>
+                                        <li><code>webNavigation</code> - Detect page loads for ad scanning</li>
+                                        <li><code>contextMenus</code> - Add right-click blocking options</li>
+                                        <li><code>&lt;all_urls&gt;</code> - Inject cosmetic filters on all websites</li>
+                                    </ul>
+                                    <p class="mb-0">We do NOT request history, bookmarks, or any sensitive permissions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="py-5 bg-light">
+    <section id="download" class="py-5 bg-dark text-white">
         <div class="container">
-            <h2 class="text-center mb-5">About AdBlockX</h2>
-            <p>AdBlockX is engineered for raw speed, zero latency, and absolute data privacy. Unlike bloated ad blockers, it uses Manifest V3 for efficient blocking.</p>
-            <p><strong>Performance:</strong> ~15MB idle, 30-50% faster page loads.</p>
-            <p><strong>Privacy:</strong> No tracking, no analytics, only anonymous blocklist sync.</p>
-            <p>Open-source under MIT License. Contribute on <a href="https://github.com/wikicrafter/adblock">GitHub</a>.</p>
+            <h2 class="text-center mb-4">Download AdBlockX</h2>
+            <p class="text-center text-light mb-5">Compressed in .7z format for fast download. Requires <a href="https://www.7-zip.org/" target="_blank" class="text-info">7-Zip</a> to extract.</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-primary border-3">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h4 class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-star-fill me-2" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>
+                                AdBlockX v1.3 - Latest
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Security & Feature Update</h5>
+                            <p class="card-text">Includes all new features and security fixes:</p>
+                            <ul class="list-unstyled">
+                                <li><span class="text-success">✓</span> Visual Element Picker</li>
+                                <li><span class="text-success">✓</span> HTTPS Everywhere</li>
+                                <li><span class="text-success">✓</span> Settings Dashboard</li>
+                                <li><span class="text-success">✓</span> XSS vulnerability fixed</li>
+                                <li><span class="text-success">✓</span> Allowlist bug fixed</li>
+                                <li><span class="text-success">✓</span> Enhanced privacy features</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="https://cdn.jsdelivr.net/gh/wikicrafter/adblock@main/AdBlockX%20v1.3%20Chromium.7z" class="btn btn-primary btn-lg w-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download me-2" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                                Download v1.3
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-secondary text-white py-3">
+                            <h4 class="mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-archive me-2" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                                AdBlockX v1.2 - Previous
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Previous Version</h5>
+                            <p class="card-text">Stable release with core ad blocking features:</p>
+                            <ul class="list-unstyled">
+                                <li><span class="text-success">✓</span> Zero-latency blocking</li>
+                                <li><span class="text-success">✓</span> Cloud blocklist sync</li>
+                                <li><span class="text-success">✓</span> Stealth Mode</li>
+                                <li><span class="text-success">✓</span> YouTube ad filtering</li>
+                                <li><span class="text-success">✓</span> Cookie banner dismiss</li>
+                                <li><span class="text-success">✓</span> Custom domain blocking</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <a href="https://cdn.jsdelivr.net/gh/wikicrafter/adblock@main/AdBlockX%20v1.2%20Chromium.7z" class="btn btn-outline-secondary btn-lg w-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download me-2" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                                Download v1.2
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="bg-black text-white py-4">
         <div class="container">
-            <p>&copy; 2026 AdBlockX. <a href="https://github.com/wikicrafter/adblock" class="text-white">GitHub</a> | <a href="https://github.com/wikicrafter/adblock/blob/main/LICENSE" class="text-white">License</a></p>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-3">AdBlockX</h6>
+                    <p class="small text-secondary mb-2">Premium, privacy-first ad blocker for Chromium browsers. Open source under MIT License.</p>
+                    <p class="small text-secondary mb-0">&copy; 2026 AdBlockX. All rights reserved.</p>
+                </div>
+                
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://github.com/wikicrafter/adblock/issues" target="_blank" class="text-secondary text-decoration-none">Report a Bug</a></li>
+                        <li class="mb-2"><a href="https://github.com/wikicrafter/adblock/discussions" target="_blank" class="text-secondary text-decoration-none">Feature Requests</a></li>
+                        <li class="mb-2"><a href="https://github.com/wikicrafter/adblock/issues/new?title=Ad+Report" target="_blank" class="text-secondary text-decoration-none">Report Missing Ad</a></li>
+                        <li class="mb-0"><a href="#faq" class="text-secondary text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <h6 class="text-uppercase fw-bold mb-3">Connect</h6>
+                    <div class="d-flex gap-3">
+                        <a href="https://github.com/wikicrafter/adblock" target="_blank" class="text-secondary fs-5" title="GitHub" data-bs-toggle="tooltip">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        </a>
+                        <a href="https://ko-fi.com/gigaa" target="_blank" class="text-secondary fs-5" title="Buy Me a Coffee" data-bs-toggle="tooltip">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8A2.5 2.5 0 0 1 15 2.5v9a2.5 2.5 0 0 1-2.5 2.5h-4v-2h4v1.5a.5.5 0 0 1-1 0V11h-4v2h4a.5.5 0 0 1 .5.5v1.5A2.5 2.5 0 0 1 4.5 16h-2A2.5 2.5 0 0 1 0 13.5v-9a.5.5 0 0 1 .5-.5h.5v-2zm2.5 1.5a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1z"/></svg>
+                        </a>
+                    
+                     
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 border-secondary">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-secondary mb-0">Built with ❤️ by <a href="https://github.com/wikicrafter" target="_blank" class="text-info">wikicrafter</a> | Powered by ITFORSEC</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="https://github.com/wikicrafter/adblock/blob/main/LICENSE" target="_blank" class="text-secondary small me-3 text-decoration-none">MIT License</a>
+                    <a href="https://github.com/wikicrafter/adblock/releases" target="_blank" class="text-secondary small me-3 text-decoration-none">Releases</a>
+                    <a href="https://github.com/wikicrafter/adblock/tree/main/scripts" target="_blank" class="text-secondary small text-decoration-none">Contribute</a>
+                </div>
+            </div>
         </div>
     </footer>
 

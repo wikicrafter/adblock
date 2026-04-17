@@ -69,22 +69,33 @@ document.addEventListener('DOMContentLoaded', () => {
       chrome.storage.local.get(['whitelist'], (result) => {
         let whitelist = result.whitelist || [];
         if (whitelist.includes(domain)) {
-          // Remove
           whitelist = whitelist.filter(d => d !== domain);
           whitelistBtn.textContent = 'Whitelist this site';
         } else {
-          // Add
           whitelist.push(domain);
           whitelistBtn.textContent = 'Remove from Whitelist';
         }
         
         chrome.storage.local.set({ whitelist: whitelist }, () => {
           chrome.tabs.reload(tab.id);
-          window.close(); // Close popup to show change
+          window.close();
         });
       });
     }
   });
+
+  // Element Picker button logic
+  const pickerBtn = document.getElementById('element-picker');
+  if (pickerBtn) {
+    pickerBtn.addEventListener('click', async () => {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (tab && tab.id) {
+        chrome.tabs.sendMessage(tab.id, { type: 'ACTIVATE_PICKER' }, () => {
+          window.close();
+        });
+      }
+    });
+  }
 
   // Report missing ad logic
   const reportBtn = document.getElementById('report-ad');
@@ -121,13 +132,25 @@ document.addEventListener('DOMContentLoaded', () => {
     addCustomDomainBtn.addEventListener('click', () => {
       let domain = customDomainInput.value.trim();
       if (domain) {
-        // basic cleanup
         domain = domain.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+        const domainRegex = /^(?:[a-z0-9](?:[a-z0-9\-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$/i;
+        if (!domainRegex.test(domain)) {
+          customDomainInput.placeholder = 'Invalid domain!';
+          setTimeout(() => customDomainInput.placeholder = 'e.g. annoying-ads.com', 2000);
+          return;
+        }
         chrome.runtime.sendMessage({ type: 'ADD_DYNAMIC_RULE', domain: domain });
         customDomainInput.value = '';
         customDomainInput.placeholder = 'Domain blocked!';
         setTimeout(() => customDomainInput.placeholder = 'e.g. annoying-ads.com', 2000);
       }
+    });
+  }
+  // Handle Settings Page
+  const settingsBtn = document.getElementById('open-settings');
+  if (settingsBtn) {
+    settingsBtn.addEventListener('click', () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL('settings.html') });
     });
   }
 });

@@ -1,30 +1,32 @@
 /* Custom Styles for AdBlockX Website */
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #2d2d2d;
-    background-color: #f8f9fa;
+    color: #1f2937;
+    background-color: #f9fafb;
 }
 
 .hero {
-    background: linear-gradient(135deg, #304ffe 0%, #4d5dff 40%, #6c4dff 100%);
-    min-height: 60vh;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #6366f1 100%);
+    min-height: 65vh;
     display: flex;
     align-items: center;
-    animation: fadeIn 1s ease-in;
-    color: #000;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .hero .display-4,
-.hero .lead,
-.hero p {
-    color: #000;
+.hero .lead {
+    color: #fff;
+}
+
+.hero .text-dark {
+    color: rgba(255,255,255,0.85) !important;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .navbar-brand img {
@@ -38,96 +40,151 @@ body {
 
 .card {
     border: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
     transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 1rem;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+.card-header {
+    border-radius: 1rem 1rem 0 0 !important;
 }
 
 .btn {
-    border-radius: 25px;
-    transition: background-color 0.3s, transform 0.3s;
-    min-height: 48px;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.2s;
 }
 
 .btn:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
 }
 
 code {
-    background: #f8f9fa;
-    padding: 2px 4px;
+    background: #e5e7eb;
+    padding: 2px 6px;
     border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.accordion-item {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0.75rem !important;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background-color: #fff;
+    font-weight: 600;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #e9ecef;
+    background-color: #f9fafb;
+    color: #3730a3;
 }
 
-.card-body {
-    min-height: 180px;
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #e5e7eb;
+}
+
+.accordion-body {
+    background-color: #fff;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 1rem;
+}
+
+.feature-card:hover {
+    border-color: #6366f1;
+}
+
+.badge {
+    font-weight: 600;
+    padding: 0.5em 0.8em;
+}
+
+.bg-dark {
+    background-color: #1f2937 !important;
 }
 
 footer {
-    background: #343a40;
+    background: #111827;
 }
 
-.fade-in {
-    animation: fadeInUp 0.6s ease-out;
+.border-primary {
+    border-color: #6366f1 !important;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.border-success {
+    border-color: #10b981 !important;
+}
+
+.border-warning {
+    border-color: #f59e0b !important;
+}
+
+.border-danger {
+    border-color: #ef4444 !important;
+}
+
+.border-info {
+    border-color: #06b6d4 !important;
+}
+
+.text-primary {
+    color: #6366f1 !important;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .hero {
-        padding: 2rem 0;
+        padding: 3rem 0;
+        min-height: auto;
     }
     .display-4 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .navbar .container {
-        padding-right: 0.6rem;
-        padding-left: 0.6rem;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
     }
     .card {
         margin-bottom: 1rem;
     }
     .btn {
         width: 100%;
+        margin-bottom: 0.5rem;
     }
 }
 
-/* Stronger feature card style */
-.feature-card {
-    background: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 12px 22px rgba(0,0,0,0.08);
-    transition: transform 0.25s, box-shadow 0.25s;
-}
-.feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 28px rgba(0,0,0,0.15);
+/* Selection styling */
+::selection {
+    background-color: #6366f1;
+    color: white;
 }
 
-.feature-card h5 {
-    font-size: 1.2rem;
-    margin-top: 0.35rem;
+/* Focus styling */
+.btn:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
 }
 
-.feature-card p {
-    color: #505050;
-    margin-bottom: 0;
+/* Icon hover effects */
+.nav-link {
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #a5b4fc !important;
 }
