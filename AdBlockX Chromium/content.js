@@ -22,13 +22,29 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
+function sanitizeClassName(c) {
+  return c.replace(/[^a-zA-Z0-9_-]/g, '');
+}
+
+function isValidSelector(selector) {
+  if (!selector || typeof selector !== 'string') return false;
+  if (selector.length > 500) return false;
+  try {
+    document.querySelectorAll(selector);
+    return true;
+  } catch (e) { return false; }
+}
+
 function generateSelector(el) {
   if (!el || el.tagName === 'BODY' || el.tagName === 'HTML') return null;
-  if (el.id) return `#${el.id}`;
+  if (el.id) {
+    const safeId = sanitizeClassName(el.id);
+    if (safeId) return `#${safeId}`;
+  }
 
   if (el.className && typeof el.className === 'string') {
-    const classes = el.className.trim().split(/\s+/).filter(c => c && !c.includes(':')).map(c => `.${c}`).join('');
-    if (classes) {
+    const classes = el.className.trim().split(/\s+/).filter(c => c && !c.includes(':')).map(c => `.${sanitizeClassName(c)}`).join('');
+    if (classes && isValidSelector(classes)) {
       try {
         if (document.querySelectorAll(classes).length === 1) return classes;
       } catch (e) { }
@@ -293,17 +309,17 @@ function pickerMouseOver(e) {
   hoveredElement.style.outline = '2px solid #ef4444';
   highlightedElement = hoveredElement;
   
-  const tag = hoveredElement.tagName.toLowerCase();
-  const id = hoveredElement.id ? `#${hoveredElement.id}` : '';
+  const tag = escapeHtml(hoveredElement.tagName.toLowerCase());
+  const id = hoveredElement.id ? `#${escapeHtml(sanitizeClassName(hoveredElement.id))}` : '';
   const cls = hoveredElement.className && typeof hoveredElement.className === 'string' 
-    ? '.' + hoveredElement.className.trim().split(/\s+/).slice(0, 2).join('.') 
+    ? '.' + hoveredElement.className.trim().split(/\s+/).slice(0, 2).map(sanitizeClassName).join('.') 
     : '';
   const selector = generateSelector(hoveredElement);
   
   pickerTooltip.innerHTML = `
     <b style="color:#c084fc">${tag.toUpperCase()}</b><br>
-    <span style="color:#94a3b8">${id}${cls}</span><br>
-    <span style="color:#86efac; font-size:11px">${selector || 'complex selector'}</span>
+    <span style="color:#94a3b8">${id}${escapeHtml(cls)}</span><br>
+    <span style="color:#86efac; font-size:11px">${escapeHtml(selector) || 'complex selector'}</span>
   `;
   pickerTooltip.style.display = 'block';
   
@@ -386,12 +402,17 @@ function showPickerError(msg) {
   pickerDialog.innerHTML = `
     <h3 style="margin:0 0 16px;font-size:16px;color:#ef444b">Error</h3>
     <p style="color:#64748b;margin-bottom:16px">${escapeHtml(msg)}</p>
-    <button onclick="document.getElementById('adblockx-picker-dialog').style.display='none';deactivatePicker()"
+    <button id="adblockx-picker-error-close"
       style="width:100%;padding:10px;background:#e2e8f0;border:none;border-radius:6px;cursor:pointer">
       Close
     </button>
   `;
   pickerDialog.style.display = 'block';
+  
+  document.getElementById('adblockx-picker-error-close').onclick = () => {
+    pickerDialog.style.display = 'none';
+    deactivatePicker();
+  };
 }
 
 function pickerKeyDown(e) {
@@ -427,9 +448,6 @@ function deactivatePicker() {
   document.removeEventListener('keydown', pickerKeyDown, true);
 }
 
-// Make deactivatePicker globally accessible for inline onclick
-window.deactivatePicker = deactivatePicker;
-
 function escapeHtml(str) {
   const div = document.createElement('div');
   div.textContent = str;
@@ -458,14 +476,19 @@ function removeAds() {
 
   if (customSelectors.length > 0) {
     try {
-      document.querySelectorAll(customSelectors.join(", ")).forEach(el => {
-        el.remove();
-        removedCount++;
-      });
+      const validSelectors = customSelectors.filter(isValidSelector);
+      if (validSelectors.length > 0) {
+        document.querySelectorAll(validSelectors.join(", ")).forEach(el => {
+          el.remove();
+          removedCount++;
+        });
+      }
     } catch (e) { }
   }
 
-  if (window.location.hostname.includes("youtube.com")) {
+  const hostname = window.location.hostname;
+  const isYouTube = hostname === 'youtube.com' || hostname.endsWith('.youtube.com');
+  if (isYouTube) {
     removedCount += handleYouTube();
   } else {
     removedCount += dismissCookieBanners();
