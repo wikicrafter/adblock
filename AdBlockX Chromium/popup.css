@@ -32,6 +32,40 @@ header {
   margin-bottom: 24px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+  border: 1px solid transparent;
+}
+
+.icon-btn:hover {
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  border-color: var(--glass-border);
+}
+
+.icon-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.icon-btn:hover svg {
+  transform: rotate(45deg);
+}
+
 .logo-section {
   display: flex;
   align-items: center;
@@ -187,6 +221,20 @@ input:checked + .slider:before {
   cursor: pointer;
   transition: all 0.2s ease;
   border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+.action-btn.primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
 }
 
 .action-btn.secondary {

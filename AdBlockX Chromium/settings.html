@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdBlockX - Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <div class="glass-shell">
+      <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <div class="logo">
+              <svg width="32" height="32" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M64 18L30 33V63C30 83.5 44.5 102.5 64 108C83.5 102.5 98 83.5 98 63V33L64 18Z"
+                  fill="url(#icon_grad)" />
+                <path d="M48 45L80 77M80 45L48 77" stroke="white" stroke-width="8" stroke-linecap="round" />
+                <defs>
+                  <linearGradient id="icon_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#818cf8" />
+                    <stop offset="100%" style="stop-color:#c084fc" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <h1>AdBlockX</h1>
+            </div>
+          </div>
+
+          <nav class="sidebar-nav">
+            <a href="#section-engine" class="nav-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Protection Engine
+            </a>
+            <a href="#section-privacy" class="nav-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Advanced Privacy
+            </a>
+            <a href="#section-whitelist" class="nav-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Whitelist
+            </a>
+            <a href="#section-manager" class="nav-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Blocked Sites
+            </a>
+            <a href="#section-stats" class="nav-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              Analytics
+            </a>
+            <a href="#section-faq" class="nav-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              FAQ
+            </a>
+          </nav>
+
+          <div class="sidebar-stats">
+            <div class="mini-stat">
+              <span class="label">Total Shielded</span>
+              <span id="sidebar-total-stat" class="value">0</span>
+            </div>
+          </div>
+
+          <div class="sidebar-footer">
+            <a href="https://github.com/wikicrafter/adblock" target="_blank" class="github-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              GitHub Repository
+            </a>
+            <p class="version">Version 1.3 Stable</p>
+            <p class="version">ITFORSEC.COM</p>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+          <header class="content-header">
+            <div class="header-titles">
+              <h2>Dashboard Settings</h2>
+              <p>Configure your protection engine and privacy shield.</p>
+            </div>
+          </header>
+
+          <div class="content-scroll-area">
+            <!-- Protection Engine -->
+            <div id="section-engine" class="section collapsed">
+              <div class="collapsible-header" data-section="engine">
+                <div class="h-info">
+                  <span class="h-icon">🛡️</span>
+                  <h3>Protection Engine</h3>
+                </div>
+                <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="section-content">
+                <p class="section-desc">AdBlockX uses a dual-engine approach combining static rules and dynamic
+                  cloud-synced blocks.</p>
+                <div class="card">
+                  <div class="card-content">
+                    <h3>Cloud Sync</h3>
+                    <p id="sync-status">Last checked: Loading...</p>
+                  </div>
+                  <button id="sync-now-button" class="btn-secondary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M23 4v6h-6"></path>
+                      <path d="M1 20v-6h6"></path>
+                      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                    Sync Rules
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Advanced Privacy -->
+            <div id="section-privacy" class="section collapsed">
+              <div class="collapsible-header" data-section="privacy">
+                <div class="h-info">
+                  <span class="h-icon">🕶️</span>
+                  <h3>Advanced Privacy & Anti-Tracking</h3>
+                </div>
+                <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="section-content">
+                <p class="section-desc">Enhance your digital shield with specialized protection layers beyond standard
+                  ad blocking.</p>
+                <div class="toggle-group">
+                  <div class="toggle-card">
+                    <div class="toggle-info">
+                      <h3>Block Social Widgets</h3>
+                      <p>Hide tracking buttons from Facebook, X, and others.</p>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" id="block-social-toggle">
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="toggle-card">
+                    <div class="toggle-info">
+                      <h3>Block Cookie Notices</h3>
+                      <p>Automatically hide annoying "Accept Cookies" popups.</p>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" id="block-cookies-toggle">
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="toggle-card">
+                    <div class="toggle-info">
+                      <h3>Anti-Fingerprinting</h3>
+                      <p>Prevent websites from creating a unique profile of your device.</p>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" id="anti-fingerprint-toggle">
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="toggle-card">
+                    <div class="toggle-info">
+                      <h3>HTTPS Everywhere</h3>
+                      <p>Automatically upgrade HTTP connections to secure HTTPS.</p>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" id="https-everywhere-toggle">
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Whitelist Management -->
+            <div id="section-whitelist" class="section collapsed">
+              <div class="collapsible-header" data-section="whitelist">
+                <div class="h-info">
+                  <span class="h-icon">✅</span>
+                  <h3>Allowed Domains (Whitelist)</h3>
+                </div>
+                <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="section-content">
+                <p class="section-desc">Ads and trackers will not be blocked on these high-trust domains.</p>
+                <div id="whitelist-container" class="list-container">
+                  <p class="loading">Loading whitelist...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Manual Website Blocking -->
+            <div id="section-manual" class="section collapsed">
+              <div class="collapsible-header" data-section="manual">
+                <div class="h-info">
+                  <span class="h-icon">🚫</span>
+                  <h3>Manual Website Blocking</h3>
+                </div>
+                <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="section-content">
+                <p class="section-desc">Instantly block any domain. All subdomains and scripts from that site will be
+                  neutralized.</p>
+                <div class="input-card">
+                  <div class="input-group">
+                    <input type="text" id="manual-block-input" placeholder="e.g. tracking-pixel.net" class="text-input">
+                    <button id="add-manual-block-btn" class="btn-primary">Block Website</button>
+                  </div>
+                  <p id="block-feedback" class="input-feedback"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blocked Websites Manager -->
+            <div id="section-manager" class="section collapsed">
+              <div class="collapsible-header" data-section="blocked-manager">
+                <div class="h-info">
+                  <span class="h-icon">⛓️</span>
+                  <h3>Blocked Websites Manager</h3>
+                </div>
+                <div class="header-tools">
+                  <div class="header-action-icon search-trigger" title="Search rules">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                  </div>
+                  <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="section-content">
+                <div class="search-entry-row">
+                  <p class="section-desc">Manage all active blocking rules. Use the search tool to find specific
+                    domains.</p>
+                  <div class="search-box">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="blocked-search-input" placeholder="Search rules...">
+                  </div>
+                </div>
+                <div id="custom-blocks-container" class="list-container">
+                  <p class="loading">Loading rules...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Statistics -->
+            <div id="section-stats" class="section collapsed">
+              <div class="collapsible-header" data-section="stats">
+                <div class="h-info">
+                  <span class="h-icon">📈</span>
+                  <h3>Security Analytics</h3>
+                </div>
+                <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="section-content">
+                <p class="section-desc">Track how AdBlockX protects your privacy and optimizes your browsing experience
+                  over time.</p>
+                <div class="analytics-card">
+                  <h3>7-Day Blocking History</h3>
+                  <div id="stats-chart" class="chart-container">
+                    <div class="chart-bar-wrapper">
+                      <div class="chart-bar" style="height: 0%"></div><span class="chart-label">Mon</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                      <div class="chart-bar" style="height: 0%"></div><span class="chart-label">Tue</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                      <div class="chart-bar" style="height: 0%"></div><span class="chart-label">Wed</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                      <div class="chart-bar" style="height: 0%"></div><span class="chart-label">Thu</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                      <div class="chart-bar" style="height: 0%"></div><span class="chart-label">Fri</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                      <div class="chart-bar" style="height: 0%"></div><span class="chart-label">Sat</span>
+                    </div>
+                    <div class="chart-bar-wrapper">
+                      <div class="chart-bar" style="height: 0%"></div><span class="chart-label">Sun</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="savings-grid">
+                  <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-info"><span class="stat-label">Data Saved</span><span id="data-saved-val"
+                        class="stat-value">0 MB</span></div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info"><span class="stat-label">Time Saved</span><span id="time-saved-val"
+                        class="stat-value">0 min</span></div>
+                  </div>
+                </div>
+                <button id="reset-stats-button" class="btn-outline-danger">Reset Analytics Data</button>
+              </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div id="section-faq" class="section collapsed">
+              <div class="collapsible-header" data-section="faq">
+                <div class="h-info">
+                  <span class="h-icon">❓</span>
+                  <h3>Frequently Asked Questions</h3>
+                </div>
+                <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="section-content">
+                <div class="faq-list">
+                  <div class="faq-item">
+                    <h4>🛡️ What is the Protection Engine?</h4>
+                    <p>AdBlockX uses a hybrid architecture. The "Static Engine" uses a high-speed local ruleset (v1.3), while the "Dynamic Engine" performs a monthly cloud-sync optimization to neutralize new and emerging threats. You can manually sync anytime via the dashboard.</p>
+                  </div>
+                  <div class="faq-item">
+                    <h4>👤 Why should I block Social Widgets?</h4>
+                    <p>Buttons like "Share on Facebook" or "Tweet" are often used as tracking beacons. Even if you don't click them, they report your browsing behavior back to social networks. Blocking them significantly reduces your digital footprint.</p>
+                  </div>
+                  <div class="faq-item">
+                    <h4>🍪 How does "Block Cookie Notices" work?</h4>
+                    <p>It uses a "CSS Shield" to identify and hide GDPR and consent popups before they can dim your screen or interrupt your flow. This is a visual layer that doesn't accept or decline cookies—it simply removes the annoyance.</p>
+                  </div>
+                  <div class="faq-item">
+                    <h4>🔒 What is HTTPS Everywhere?</h4>
+                    <p>HTTPS Everywhere automatically upgrades HTTP connections to secure HTTPS. It works on two levels: network-level upgrading for page navigations, and content-level upgrading for links on pages you visit. Note: This is a basic implementation—if a site doesn't support HTTPS, you may see connection errors. It cannot guarantee connection to every site over HTTPS.</p>
+                  </div>
+                  <div class="faq-item">
+                    <h4>📺 Does AdBlockX work on YouTube?</h4>
+                    <p>Yes. AdBlockX features a specialized YouTube Engine that skips playback ads, mutes them instantly, and strips away sponsored "cards" and mid-roll interruptions for a clean viewing experience.</p>
+                  </div>
+                  <div class="faq-item">
+                    <h4>🚫 Manual Blocking vs. Whitelisting?</h4>
+                    <p>Manual Blocking allows you to "Hard Block" any specific site at the browser level—perfect for productivity or security. Whitelisting does the opposite: it tells the engine to stay inactive on sites you trust and want to support.</p>
+                  </div>
+                  <div class="faq-item">
+                    <h4>🎯 How does the Element Picker work?</h4>
+                    <p>Click the Element Picker button in the popup, then hover over any element on the page to highlight it. Click to select, choose whether to block it on just this page or everywhere, then confirm. Press <b>Esc</b> to cancel the picker at any time.</p>
+                  </div>
+                  <div class="faq-item">
+                    <h4>📉 How are "Savings" estimated?</h4>
+                    <p>We estimate 150KB of data saved per blocked ad (typical for modern banners/scripts) and 0.5 seconds of browsing time saved per element, as the browser doesn't have to wait for those slow trackers to load.</p>
+                  </div>
+                  <div class="faq-item">
+                    <h4>⚙️ When should I use Factory Reset?</h4>
+                    <p>Use this if you encounter persistent issues on multiple sites, or if your custom blocklist has become too large and complex. It’s also the best way to wipe all historical analytics for a total privacy refresh, returning AdBlockX to its original "Day 1" performance state.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Maintenance -->
+            <div id="section-maintenance" class="section collapsed">
+              <div class="collapsible-header" data-section="maintenance">
+                <div class="h-info">
+                  <span class="h-icon">⚙️</span>
+                  <h3>System Maintenance</h3>
+                </div>
+                <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="section-content">
+                <div class="card danger-card">
+                  <div class="card-content">
+                    <h3>Factory Reset</h3>
+                    <p>Reverts all settings, clears stats, and wipes the whitelist.</p>
+                  </div>
+                  <button id="reset-button" class="btn-danger">Full Clean Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>
